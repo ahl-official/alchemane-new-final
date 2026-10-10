@@ -38,20 +38,20 @@ export function RiskFreeBanner() {
                 </li>
               ))}
             </ul>
-            <div className="mt-7 flex flex-wrap items-center justify-between gap-5">
+            <div className="mt-6 flex flex-col items-stretch gap-4 sm:mt-7 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
               <p className="font-display text-xl">Zero Risk, Maximum Confidence – Let&rsquo;s Chat!</p>
-              <div className="flex flex-wrap gap-2.5">
+              <div className="grid grid-cols-2 gap-2.5 sm:flex sm:flex-wrap">
                 <a
                   href={waLink("Hello Alchemane, I'd like to know more.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[50px] items-center gap-4 rounded-[3px] bg-accent px-5 text-small font-semibold text-ink transition-colors hover:bg-white"
+                  className="inline-flex min-h-[50px] items-center justify-center gap-2 rounded-[3px] bg-accent px-3 text-small font-semibold text-ink transition-colors hover:bg-white sm:justify-start sm:gap-4 sm:px-5"
                 >
                   WhatsApp <span aria-hidden="true">↗</span>
                 </a>
                 <a
                   href={`tel:${PHONE_TEL}`}
-                  className="inline-flex min-h-[50px] items-center gap-4 rounded-[3px] border border-white/50 px-5 text-small font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
+                  className="inline-flex min-h-[50px] items-center justify-center gap-2 rounded-[3px] border border-white/50 px-3 text-small font-semibold text-white transition-colors hover:border-white hover:bg-white/10 sm:justify-start sm:gap-4 sm:px-5"
                 >
                   Call us <span aria-hidden="true">↗</span>
                 </a>

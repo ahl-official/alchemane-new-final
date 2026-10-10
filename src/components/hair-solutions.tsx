@@ -100,8 +100,13 @@ export function HairSolutions() {
                       </span>
                       <h3 className="font-body text-body font-semibold text-ink">{product.name}</h3>
                       {showPrice && <span className="text-small text-muted">{priceLabel(product)}</span>}
-                      <span className="text-small font-semibold text-ink underline-offset-4 group-hover:underline">
-                        {consultation ? "Need Consultation" : product.isNew ? "Ask for details" : "View product"}{" "}
+                      <span
+                        className={cn(
+                          "mt-1.5 flex min-h-[48px] items-center justify-between gap-2 rounded px-2.5 text-small font-semibold",
+                          consultation ? "mt-auto bg-ink text-white" : "border border-ink text-ink"
+                        )}
+                      >
+                        {consultation ? "Need Consultation" : product.isNew ? "Ask for details" : "View product"}
                         <span aria-hidden="true">↗</span>
                       </span>
                     </a>

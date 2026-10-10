@@ -18,10 +18,10 @@ export function FaqSection() {
       </Reveal>
 
       <Tabs.Root defaultValue={faqTabs[0].id} className="mt-7">
-        <div className="flex justify-center">
+        <div className="-mx-5 flex sm:mx-0 sm:justify-center">
           <Tabs.List
             aria-label="Question categories"
-            className="flex max-w-full gap-1.5 overflow-x-auto rounded-full border border-line bg-white/60 p-1.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex max-w-full gap-1.5 overflow-x-auto px-5 py-1.5 sm:rounded-full sm:border sm:border-line sm:bg-white/60 sm:px-1.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {faqTabs.map((tab) => (
               <Tabs.Trigger

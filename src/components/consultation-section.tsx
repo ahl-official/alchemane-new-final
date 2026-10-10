@@ -52,38 +52,38 @@ export function ConsultationSection() {
 
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 bg-white p-10">
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="flex flex-col gap-1 text-small font-semibold text-ink">
+            <label className="flex flex-col gap-1.5 text-small font-semibold text-ink">
               Your name
               <input
                 autoComplete="name"
                 placeholder="Full name"
                 maxLength={80}
-                className="min-h-[48px] rounded-sm border border-line px-4 text-body font-normal"
+                className="min-h-[48px] border-0 border-b border-line bg-transparent py-3.5 text-body font-normal text-ink outline-none placeholder:text-muted focus:border-ink"
                 {...register("name")}
               />
               {errors.name && <span className="text-caption text-red-700">{errors.name.message}</span>}
             </label>
-            <label className="flex flex-col gap-1 text-small font-semibold text-ink">
+            <label className="flex flex-col gap-1.5 text-small font-semibold text-ink">
               Phone number
               <input
                 type="tel"
                 autoComplete="tel"
                 placeholder="+91"
                 maxLength={20}
-                className="min-h-[48px] rounded-sm border border-line px-4 text-body font-normal"
+                className="min-h-[48px] border-0 border-b border-line bg-transparent py-3.5 text-body font-normal text-ink outline-none placeholder:text-muted focus:border-ink"
                 {...register("phone")}
               />
               {errors.phone && <span className="text-caption text-red-700">{errors.phone.message}</span>}
             </label>
           </div>
 
-          <label className="flex flex-col gap-1 text-small font-semibold text-ink">
+          <label className="flex flex-col gap-1.5 text-small font-semibold text-ink">
             Your city
             <input
               autoComplete="address-level2"
               placeholder="City"
               maxLength={80}
-              className="min-h-[48px] rounded-sm border border-line px-4 text-body font-normal"
+              className="min-h-[48px] border-0 border-b border-line bg-transparent py-3.5 text-body font-normal text-ink outline-none placeholder:text-muted focus:border-ink"
               {...register("city")}
             />
           </label>
@@ -100,7 +100,7 @@ export function ConsultationSection() {
             </div>
           </fieldset>
 
-          <Button type="submit" className="self-start">
+          <Button type="submit" className="mt-2 w-full">
             Submit <span aria-hidden="true">↗</span>
           </Button>
 

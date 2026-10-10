@@ -9,19 +9,21 @@ const logos = [
 
 export function FeaturedIn() {
   return (
-    <section aria-labelledby="media-coverage-title" className="section-wrap">
-      <Reveal>
-        <h2 id="media-coverage-title" className="font-display text-title text-ink">
-          Featured In
-        </h2>
-      </Reveal>
-      <ul role="list" className="mt-6 flex flex-wrap items-center justify-center gap-10 md:justify-between">
-        {logos.map((logo) => (
-          <li key={logo.alt} className="relative h-10 w-28">
-            <Image src={logo.src} alt={logo.alt} fill className="object-contain" sizes="112px" />
-          </li>
-        ))}
-      </ul>
+    <section aria-labelledby="media-coverage-title" className="bg-fog">
+      <div className="section-wrap text-center">
+        <Reveal>
+          <h2 id="media-coverage-title" className="font-display text-title text-ink">
+            Featured In
+          </h2>
+        </Reveal>
+        <ul role="list" className="mx-auto mt-8 grid max-w-xs grid-cols-1 items-center justify-items-center gap-7 sm:max-w-none sm:grid-cols-3 sm:gap-10">
+          {logos.map((logo) => (
+            <li key={logo.alt} className="relative h-10 w-28">
+              <Image src={logo.src} alt={logo.alt} fill className="object-contain" sizes="112px" />
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

@@ -31,16 +31,16 @@ export function CheckoutDiscount() {
         className="pointer-events-none absolute -bottom-[22vw] -right-[8vw] aspect-square w-[min(44vw,580px)] rounded-full border border-accent/44"
       />
       <div className="section-wrap grid items-center gap-8 md:grid-cols-[0.9fr_1.1fr]">
-        <h2 id="checkout-discount-title" className="font-display text-title text-ink">
+        <h2 id="checkout-discount-title" className="text-center font-display text-title text-ink md:text-left">
           Get special discounts
           <br />
           on checkout
         </h2>
         {isSubmitSuccessful ? (
-          <p className="text-body text-ink">Your request is ready in WhatsApp. Please tap Send to share it with our team.</p>
+          <p className="text-center text-body text-ink md:text-left">Your request is ready in WhatsApp. Please tap Send to share it with our team.</p>
         ) : (
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
-            <div className="grid grid-cols-[1fr_auto] gap-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_auto]">
               <label className="sr-only" htmlFor="checkout-discount-phone">
                 Phone number
               </label>
@@ -54,7 +54,7 @@ export function CheckoutDiscount() {
                 className="min-h-[54px] rounded-[3px] border border-line bg-white px-4 text-body"
                 {...register("phone")}
               />
-              <Button type="submit" className="min-w-[142px] rounded-[3px] tracking-[0.1em]">
+              <Button type="submit" className="w-full min-w-[142px] rounded-[3px] tracking-[0.1em] sm:w-auto">
                 UNLOCK
               </Button>
             </div>
@@ -63,7 +63,7 @@ export function CheckoutDiscount() {
                 {errors.phone.message}
               </p>
             )}
-            <label className="flex items-center gap-2.5 text-small text-muted">
+            <label className="flex items-center justify-center gap-2.5 text-center text-small text-muted md:justify-start md:text-left">
               <input type="checkbox" className="h-[18px] w-[18px] accent-ink" {...register("updates")} />
               <span>Get updates on WhatsApp. You may opt out anytime.</span>
             </label>
