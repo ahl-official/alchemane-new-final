@@ -27,7 +27,6 @@ export function HairSolutions() {
   const filtered = useMemo(() => products.filter((p) => productBelongsToCategory(p, category)), [category]);
 
   const shown = filtered.slice(0, visible);
-  const activeLabel = categories.find((c) => c.id === category)?.name ?? "";
 
   return (
     <section id="collection" aria-label="Find the right hair solution" className="section-wrap">
@@ -55,7 +54,7 @@ export function HairSolutions() {
 
       <div className="mt-6">
         <p role="status" aria-live="polite" aria-atomic="true" className="text-small text-muted">
-          {filtered.length} products in {activeLabel}
+          {filtered.length} product{filtered.length === 1 ? "" : "s"}
         </p>
 
         {filtered.length === 0 ? (
@@ -81,7 +80,7 @@ export function HairSolutions() {
                       rel={!consultation && product.isNew ? "noopener noreferrer" : undefined}
                       className="group flex flex-col gap-2"
                     >
-                      <span className="relative block aspect-[4/5] w-full overflow-hidden bg-[#e5e5e5]">
+                      <span className="relative block aspect-[4/5] w-full overflow-hidden bg-fog">
                         {product.image ? (
                           <Image
                             src={product.image}
@@ -94,7 +93,7 @@ export function HairSolutions() {
                           <span className="sr-only">Product photograph not yet available</span>
                         )}
                         {product.isNew && (
-                          <span className="absolute left-2 top-2 rounded-sm bg-white px-2 py-1 text-caption font-semibold text-ink">
+                          <span className="absolute left-2 top-2 rounded-sm bg-accent px-2 py-1 text-caption font-semibold text-ink">
                             New addition
                           </span>
                         )}
@@ -118,7 +117,7 @@ export function HairSolutions() {
                   onClick={() => setVisible((v) => v + PAGE_SIZE)}
                   className="min-h-[48px] rounded-sm border border-ink px-6 text-small font-semibold text-ink"
                 >
-                  Show more products <span aria-hidden="true">↓</span>
+                  Show more products ({filtered.length - visible} remaining) <span aria-hidden="true">↓</span>
                 </button>
               </div>
             )}

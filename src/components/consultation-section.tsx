@@ -38,8 +38,8 @@ export function ConsultationSection() {
   };
 
   return (
-    <section id="consultation" aria-labelledby="consultation-title" className="section-wrap">
-      <div className="grid gap-10 md:grid-cols-2">
+    <section id="consultation" aria-labelledby="consultation-title" className="bg-mist">
+      <div className="section-wrap grid items-center gap-10 md:grid-cols-[0.85fr_1.15fr]">
         <div>
           <h2 id="consultation-title" className="font-display text-title text-ink">
             Book Your Private Consultation
@@ -50,7 +50,7 @@ export function ConsultationSection() {
           </a>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 bg-white p-10">
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="flex flex-col gap-1 text-small font-semibold text-ink">
               Your name
@@ -105,7 +105,7 @@ export function ConsultationSection() {
           </Button>
 
           {isSubmitSuccessful && (
-            <div role="status" className="rounded-sm bg-mist p-4">
+            <div role="status" className="rounded-sm border border-line bg-fog p-4">
               <p className="text-body text-ink">Your request is ready. Open WhatsApp, check the message and press send.</p>
               <a
                 href={link}

@@ -22,7 +22,7 @@ export function BestSellers() {
         {items.map((item) => (
           <article role="listitem" key={item.name} className="w-[220px] shrink-0 md:w-[260px]">
             <a href={item.href}>
-              <span className="relative block aspect-[4/5] w-full bg-[#e5e5e5]">
+              <span className="relative block aspect-[4/5] w-full bg-fog">
                 {item.image && <Image src={item.image} alt={item.alt ?? item.name} fill sizes="260px" className="object-cover" />}
               </span>
               <span className="mt-2 block text-small text-muted">{item.category}</span>

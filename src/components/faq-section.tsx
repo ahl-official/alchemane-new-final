@@ -39,9 +39,14 @@ export function FaqSection() {
               {tab.items.map((item) => (
                 <Accordion.Item key={item.q} value={item.q}>
                   <Accordion.Header>
-                    <Accordion.Trigger className="flex w-full items-center justify-between gap-4 py-4 text-left text-body font-semibold text-ink">
+                    <Accordion.Trigger className="group flex w-full items-center justify-between gap-4 py-4 text-left text-body font-semibold text-ink">
                       <span>{item.q}</span>
-                      <i aria-hidden="true" className="text-xl">+</i>
+                      <i
+                        aria-hidden="true"
+                        className="flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full border border-line text-lg not-italic text-accent-ink transition-transform group-data-[state=open]:rotate-45 group-data-[state=open]:border-ink group-data-[state=open]:bg-ink group-data-[state=open]:text-white"
+                      >
+                        +
+                      </i>
                     </Accordion.Trigger>
                   </Accordion.Header>
                   <Accordion.Content className="overflow-hidden pb-4 text-body text-muted data-[state=closed]:hidden">
@@ -54,14 +59,17 @@ export function FaqSection() {
         ))}
       </Tabs.Root>
 
-      <aside aria-labelledby="faq-support-title" className="mt-10 flex flex-col items-start gap-4 rounded-sm bg-mist p-6 md:flex-row md:items-center md:justify-between">
+      <aside aria-labelledby="faq-support-title" className="mt-5 flex flex-col items-start gap-6 bg-ink p-8 text-white md:flex-row md:items-end md:justify-between">
         <div>
-          <h3 id="faq-support-title" className="font-display text-xl text-ink">
+          <h3 id="faq-support-title" className="font-display text-2xl text-white">
             Still have questions?
           </h3>
-          <p className="mt-1 text-body text-muted">Tell us what you are looking for. Our hair experts will guide you to the right solution.</p>
+          <p className="mt-2 max-w-md text-body text-mist">Tell us what you are looking for. Our hair experts will guide you to the right solution.</p>
         </div>
-        <a href="#consultation" className="whitespace-nowrap text-small font-semibold text-ink underline-offset-4 hover:underline">
+        <a
+          href="#consultation"
+          className="inline-flex min-h-[48px] shrink-0 items-center gap-4 whitespace-nowrap bg-white px-5 text-small font-semibold text-ink transition-transform hover:-translate-y-0.5"
+        >
           Ask an expert <span aria-hidden="true">↗</span>
         </a>
       </aside>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import * as Dialog from "@radix-ui/react-dialog";
+import { Gem, Sparkles, UserCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { PRIVACY_URL, TERMS_URL, waLink } from "@/lib/constants";
@@ -50,25 +51,38 @@ export function OfferPopup() {
             </svg>
           </Dialog.Close>
 
-          <div className="flex flex-col gap-4 bg-mist p-8">
-            <Image src="/icons/new-logo.svg" alt="Alchemane" width={160} height={40} />
-            <p className="font-display text-2xl text-ink" aria-hidden="true">
-              Get <span className="text-accent-ink">{OFFER} off</span>
+          <div className="relative isolate flex flex-col gap-4 overflow-hidden bg-ink p-8 text-white">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-white/10"
+            />
+            <Image src="/icons/new-logo.svg" alt="Alchemane" width={150} height={38} className="brightness-0 invert" />
+            <p className="font-display text-[clamp(1.75rem,3.2vw,2.5rem)] leading-tight" aria-hidden="true">
+              Get <span className="text-accent">{OFFER} off</span>
               <br />
               your first online order
             </p>
-            <ul role="list" className="flex flex-col gap-3 text-small text-ink">
-              <li>
-                <strong className="block">New products first</strong>
-                <span className="text-muted">Hear about new products before they launch</span>
+            <ul role="list" className="flex flex-col gap-3">
+              <li className="flex items-start gap-3.5 rounded-[3px] border border-white/15 bg-white/5 p-3.5">
+                <Sparkles className="mt-0.5 h-[22px] w-[22px] shrink-0 text-accent" strokeWidth={1.5} />
+                <span>
+                  <strong className="block text-small font-semibold text-white">New products first</strong>
+                  <span className="text-small text-white/75">Hear about new products before they launch</span>
+                </span>
               </li>
-              <li>
-                <strong className="block">100% human hair</strong>
-                <span className="text-muted">Made for a natural look</span>
+              <li className="flex items-start gap-3.5 rounded-[3px] border border-white/15 bg-white/5 p-3.5">
+                <Gem className="mt-0.5 h-[22px] w-[22px] shrink-0 text-accent" strokeWidth={1.5} />
+                <span>
+                  <strong className="block text-small font-semibold text-white">100% human hair</strong>
+                  <span className="text-small text-white/75">Made for a natural look</span>
+                </span>
               </li>
-              <li>
-                <strong className="block">Help choosing</strong>
-                <span className="text-muted">We help you choose the right product and colour</span>
+              <li className="flex items-start gap-3.5 rounded-[3px] border border-white/15 bg-white/5 p-3.5">
+                <UserCheck className="mt-0.5 h-[22px] w-[22px] shrink-0 text-accent" strokeWidth={1.5} />
+                <span>
+                  <strong className="block text-small font-semibold text-white">Help choosing</strong>
+                  <span className="text-small text-white/75">We help you choose the right product and colour</span>
+                </span>
               </li>
             </ul>
           </div>

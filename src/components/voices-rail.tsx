@@ -72,7 +72,7 @@ export function VoicesRail({
           Array.from({ length: pendingCount ?? 2 }).map((_, i) => (
             <li
               key={i}
-              className="flex aspect-[9/16] w-[180px] shrink-0 items-center justify-center rounded-sm border border-dashed border-line bg-fog md:w-[220px]"
+              className="flex aspect-[9/16] w-[180px] shrink-0 items-center justify-center bg-fog md:w-[220px]"
             >
               <span className="text-small font-semibold text-muted">Film coming soon</span>
               <span className="sr-only">
