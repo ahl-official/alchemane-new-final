@@ -17,21 +17,26 @@ export function FaqSection() {
         </header>
       </Reveal>
 
-      <Tabs.Root defaultValue={faqTabs[0].id} className="mt-6">
-        <Tabs.List aria-label="Question categories" className="flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {faqTabs.map((tab) => (
-            <Tabs.Trigger
-              key={tab.id}
-              value={tab.id}
-              className={cn(
-                "min-h-[44px] shrink-0 whitespace-nowrap rounded-full border border-line px-5 text-small font-semibold text-ink",
-                "data-[state=active]:border-ink data-[state=active]:bg-ink data-[state=active]:text-white"
-              )}
-            >
-              {tab.label}
-            </Tabs.Trigger>
-          ))}
-        </Tabs.List>
+      <Tabs.Root defaultValue={faqTabs[0].id} className="mt-7">
+        <div className="flex justify-center">
+          <Tabs.List
+            aria-label="Question categories"
+            className="flex max-w-full gap-1.5 overflow-x-auto rounded-full border border-line bg-white/60 p-1.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {faqTabs.map((tab) => (
+              <Tabs.Trigger
+                key={tab.id}
+                value={tab.id}
+                className={cn(
+                  "min-h-[46px] shrink-0 whitespace-nowrap rounded-full px-[18px] text-small font-semibold text-muted transition-colors",
+                  "data-[state=active]:bg-ink data-[state=active]:text-white data-[state=active]:shadow-[0_7px_16px_rgb(35_41_40_/_0.15)]"
+                )}
+              >
+                {tab.label}
+              </Tabs.Trigger>
+            ))}
+          </Tabs.List>
+        </div>
 
         {faqTabs.map((tab) => (
           <Tabs.Content key={tab.id} value={tab.id} className="mt-6">

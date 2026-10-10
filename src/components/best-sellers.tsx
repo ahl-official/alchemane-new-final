@@ -12,22 +12,26 @@ const items: BestSeller[] = [
 
 export function BestSellers() {
   return (
-    <section aria-labelledby="best-sellers-title" className="section-wrap">
+    <section aria-labelledby="best-sellers-title" className="section-wrap border-b border-line">
       <Reveal>
-        <h2 id="best-sellers-title" className="font-display text-title text-ink">
+        <h2 id="best-sellers-title" className="text-center font-display text-title text-ink">
           Our Best Sellers
         </h2>
       </Reveal>
-      <div role="list" aria-label="Best-selling hair products" className="mt-6 flex gap-4 overflow-x-auto pb-2">
+      <div
+        role="list"
+        aria-label="Best-selling hair products"
+        className="mt-8 flex gap-3.5 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible lg:grid-cols-4 [&::-webkit-scrollbar]:hidden"
+      >
         {items.map((item) => (
-          <article role="listitem" key={item.name} className="w-[220px] shrink-0 md:w-[260px]">
-            <a href={item.href}>
+          <article role="listitem" key={item.name} className="w-[72vw] max-w-[290px] shrink-0 sm:w-auto sm:max-w-none">
+            <a href={item.href} className="flex h-full flex-col">
               <span className="relative block aspect-[4/5] w-full bg-fog">
-                {item.image && <Image src={item.image} alt={item.alt ?? item.name} fill sizes="260px" className="object-cover" />}
+                {item.image && <Image src={item.image} alt={item.alt ?? item.name} fill sizes="(max-width: 640px) 72vw, 25vw" className="object-cover" />}
               </span>
-              <span className="mt-2 block text-small text-muted">{item.category}</span>
-              <h3 className="font-body text-body font-semibold text-ink">{item.name}</h3>
-              <span className="block text-small text-muted">{item.price}</span>
+              <span className="mt-4 block text-caption uppercase tracking-[0.08em] text-muted">{item.category}</span>
+              <h3 className="mt-1 font-body text-body font-semibold text-ink">{item.name}</h3>
+              <span className="text-small text-muted">{item.price}</span>
             </a>
           </article>
         ))}

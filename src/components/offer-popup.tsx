@@ -45,9 +45,12 @@ export function OfferPopup() {
           aria-describedby="offer-intro"
           className="fixed left-1/2 top-1/2 z-50 grid w-[min(92vw,760px)] -translate-x-1/2 -translate-y-1/2 grid-cols-1 overflow-hidden rounded-sm bg-white md:grid-cols-2"
         >
-          <Dialog.Close aria-label="Close offer" className="absolute right-4 top-4 z-10">
-            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-              <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="1.5" fill="none" />
+          <Dialog.Close
+            aria-label="Close offer"
+            className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-ink text-white transition-opacity hover:opacity-80"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4">
+              <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="1.75" fill="none" />
             </svg>
           </Dialog.Close>
 

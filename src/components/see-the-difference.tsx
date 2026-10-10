@@ -38,10 +38,20 @@ export function SeeTheDifference() {
           ))}
         </ul>
         <div className="mt-4 flex justify-end gap-2 border-t border-line pt-4">
-          <button type="button" aria-label="Previous transformations" onClick={() => scrollBy(-1)} className="flex h-10 w-10 items-center justify-center rounded-full border border-line">
+          <button
+            type="button"
+            aria-label="Previous transformations"
+            onClick={() => scrollBy(-1)}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-line transition-colors hover:border-ink hover:bg-ink hover:text-white"
+          >
             ←
           </button>
-          <button type="button" aria-label="Next transformations" onClick={() => scrollBy(1)} className="flex h-10 w-10 items-center justify-center rounded-full bg-ink text-white">
+          <button
+            type="button"
+            aria-label="Next transformations"
+            onClick={() => scrollBy(1)}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-line transition-colors hover:border-ink hover:bg-ink hover:text-white"
+          >
             →
           </button>
         </div>

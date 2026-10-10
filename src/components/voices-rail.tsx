@@ -36,10 +36,20 @@ export function VoicesRail({
           {sub && <p className="mt-1 text-body text-muted">{sub}</p>}
         </div>
         <div role="group" aria-label="Scroll the films" className="hidden gap-2 md:flex">
-          <button type="button" aria-label="Previous films" onClick={() => scrollBy(-1)} className="flex h-10 w-10 items-center justify-center rounded-full border border-line">
+          <button
+            type="button"
+            aria-label="Previous films"
+            onClick={() => scrollBy(-1)}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-line transition-colors hover:border-ink hover:bg-ink hover:text-white"
+          >
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5"><path d="m15 5-7 7 7 7" stroke="currentColor" strokeWidth="1.5" fill="none" /></svg>
           </button>
-          <button type="button" aria-label="Next films" onClick={() => scrollBy(1)} className="flex h-10 w-10 items-center justify-center rounded-full border border-line">
+          <button
+            type="button"
+            aria-label="Next films"
+            onClick={() => scrollBy(1)}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-line transition-colors hover:border-ink hover:bg-ink hover:text-white"
+          >
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5"><path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.5" fill="none" /></svg>
           </button>
         </div>
